@@ -18,15 +18,15 @@ class NotesView extends StatelessWidget {
               ),
               context: context,
               builder: (context) {
-                return Add_note_bottom_sheet();
+                return const Add_note_bottom_sheet();
               });
         },
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
       ),
-      body: NotesviewBody(),
+      body: const NotesviewBody(),
     );
   }
 }
