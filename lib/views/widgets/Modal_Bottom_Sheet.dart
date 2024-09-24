@@ -16,16 +16,16 @@ class Add_note_bottom_sheet extends StatelessWidget {
       child: SingleChildScrollView(
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
-            if (state is AddNoteCubitFailure) {
-              print("failed${state.errmessage}");
+            if (state is AddNoteFailure) {
+              print("failed${state.errMessage}");
             }
-            if (state is AddNoteCubitSuccess) {
+            if (state is AddNoteSuccess) {
               Navigator.pop(context);
             }
           },
           builder: (context, state) {
             return ModalProgressHUD(
-                inAsyncCall: state is AddNoteCubitLoading ? true : false,
+                inAsyncCall: state is AddNoteLoading ? true : false,
                 child: add_note_form());
           },
         ),
