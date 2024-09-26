@@ -35,9 +35,14 @@ class Add_note_bottom_sheet extends StatelessWidget {
               }
             },
             builder: (context, state) {
-              return ModalProgressHUD(
-                  inAsyncCall: state is AddNoteLoading ? true : false,
-                  child: add_note_form());
+              return AbsorbPointer(
+                absorbing: state is AddNoteLoading ? true : false,
+                child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: SingleChildScrollView(
+                      child: add_note_form(),
+                    )),
+              );
             },
           ),
         ),
