@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/cubits/cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/Custom_Text_field.dart';
 import 'package:notes_app/views/widgets/Custom_button.dart';
 import 'package:notes_app/views/widgets/add_note_formState.dart';
@@ -23,6 +24,7 @@ class Add_note_bottom_sheet extends StatelessWidget {
                 print("failed${state.errMessage}");
               }
               if (state is AddNoteSuccess) {
+                BlocProvider.of<NotesCubit>(context).fetchnotedata();
                 Navigator.pop(context);
                 Fluttertoast.showToast(
                     msg: "added succefully",
