@@ -10,7 +10,7 @@ class NoteView extends HiveObject {
   @HiveField(2)
   final String date;
   @HiveField(3)
-  final int color;
+  int color;
 
   NoteView(
       {required this.title,
