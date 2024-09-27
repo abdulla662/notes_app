@@ -31,7 +31,7 @@ class _NotesviewBodyState extends State<NotesviewBody> {
           ),
           CustomAppbar(
             titletext: "Notes",
-            icon: const Icon(Icons.search),
+            icon: Icons.search,
           ),
           const Expanded(
             child: Note_Item_builder(),
